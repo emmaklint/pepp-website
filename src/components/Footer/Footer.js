@@ -5,13 +5,13 @@ import * as feather from 'styled-icons/feather'
 import { Link } from 'gatsby'
 
 const Container = styled.div`
-background-color: #FE4A4A;
+background-color: #FECC02;
 padding: 20px;
 
 `
 const Inner = styled.div`
 margin: 0 auto;
-max-width: 960;
+max-width: 960px;
 padding: 1.45rem 1.0875rem;
 `
 const Heading = styled.h2`

@@ -1,14 +1,15 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react";
 
-import Page from '../components/Page'
+import Page from "../components/Page";
+import PageHeader from "../components/Typography/PageHeader";
+import Text from "../components/Typography/Text";
 
 const Stockholm = () => (
   <Page>
-    <h1>Stockholm</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <Text>
+      <PageHeader>Stockholm</PageHeader>
+    </Text>
   </Page>
-)
+);
 
-export default Stockholm
+export default Stockholm;

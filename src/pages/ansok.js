@@ -1,14 +1,12 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react";
 
-import Page from '../components/Page'
+import Page from "../components/Page";
+import PageHeader from "../components/Typography/PageHeader";
 
 const Apply = () => (
   <Page>
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <PageHeader>Ansök</PageHeader>
   </Page>
-)
+);
 
-export default Apply
+export default Apply;

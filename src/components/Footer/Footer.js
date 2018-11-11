@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Grid, GridItem } from "styled-grid-responsive";
 import * as feather from "styled-icons/feather";
 import { Link } from "gatsby";
+import Meta from "../Typography/Meta";
 
 const Container = styled.div`
   background-color: #fecc02;
@@ -82,7 +83,13 @@ const Footer = () => (
         </SocialLink>
       </Center>
       <Center>
-        <p>Acceptera dataskyddspolicy osv.</p>
+        <Meta>Acceptera dataskyddspolicy osv.</Meta>
+      </Center>
+      <Center>
+        <Meta>
+          Pepp välkomnar alla som identifierar sig som tjejer och som går i
+          gymnasiet.
+        </Meta>
       </Center>
     </Inner>
   </Container>

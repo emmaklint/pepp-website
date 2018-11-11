@@ -1,14 +1,15 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react";
 
-import Page from '../components/Page'
+import Page from "../components/Page";
+import PageHeader from "../components/Typography/PageHeader";
+import Text from "../components/Typography/Text";
 
 const Contact = () => (
   <Page>
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <Text>
+      <PageHeader>Kontakt</PageHeader>
+    </Text>
   </Page>
-)
+);
 
-export default Contact
+export default Contact;

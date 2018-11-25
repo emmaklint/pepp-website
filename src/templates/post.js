@@ -25,7 +25,9 @@ class PostTemplate extends Component {
           </div>
         )}
         <Text>
+          <P>
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          </P>
         </Text>
       </Page>
     );

@@ -42,10 +42,23 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography.js`,
       }
-    }
+    },
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        // your wordpress source
+        baseUrl: `blipepp.nu`,
+        protocol: `http`,
+        // is it hosted on wordpress.com, or self-hosted?
+        hostingWPCOM: false,
+        // does your site use the Advanced Custom Fields Plugin?
+        useACF: false
+      }
+    },
   ]
     
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
 }
+

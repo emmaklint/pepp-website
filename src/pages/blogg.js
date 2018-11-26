@@ -9,17 +9,17 @@ class Blog extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      keywords: []
+      keyword: ""
     };
   }
 
   getPosts() {
     const data = this.props.data;
-    
-    if (this.state.keywords.length >= 1) {
+
+    if (this.state.keyword !== "") {
       return data.allWordpressPost.edges.filter(({ node }) => {
         return node.categories.some(
-          category => category.slug === this.state.keywords[0]
+          category => category.slug === this.state.keyword
         );
       });
     } else {
@@ -27,14 +27,20 @@ class Blog extends Component {
     }
   }
 
-  render() {
+  setKeyword(keyword) {
+    if (this.state.keyword === keyword) {
+      this.setState({ keyword: "" });
+    } else {
+      this.setState({ keyword: keyword });
+    }
+  }
 
+  render() {
     return (
       <Page>
-        <button onClick={() => this.setState({ keywords: [...this.state.keywords, 'stockholm'] })}>
-          Filter
-          {this.state.keywords}
-        </button>
+        Filter: {this.state.keyword}
+        <button onClick={() => this.setKeyword("stockholm")}>Stockholm</button>
+        <button onClick={() => this.setKeyword("goteborg")}>Göteborg</button>
         <Grid>
           {this.getPosts().map(({ node }) => (
             <GridItem col={1 / 3} key={node.slug}>

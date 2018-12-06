@@ -9,7 +9,7 @@ import styled from "styled-components";
 
 const TextLink = styled(Link)`
 transition: background-size .4s ease;
-background: linear-gradient(to bottom, transparent 62%, #fecc02 0) center center/0% 75% no-repeat;
+background: linear-gradient(to bottom, transparent 62%, ##fecc02fecc02 0) center center/0% 75% no-repeat;
 text-decoration: underline;
 cursor: pointer;
 &:hover {

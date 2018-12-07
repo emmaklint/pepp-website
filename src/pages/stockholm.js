@@ -1,14 +1,16 @@
 import React, { Component } from "react";
-
 import Page from "../components/Page";
 import PageHeader from "../components/Typography/PageHeader";
 import Text from "../components/Typography/Text";
 import Img from "gatsby-image";
+import { graphql } from "gatsby";
 
 class Stockholm extends Component {
   render() {
     const data = this.props.data;
     const persons = data.allWordpressWpPerson.edges;
+    const posts = data.allWordpressPost.edges;
+    console.log(posts);
 
     return (
       <Page>
@@ -33,7 +35,7 @@ class Stockholm extends Component {
 
 export default Stockholm;
 
-export const personQuery = graphql`
+export const pageQuery = graphql`
   query {
     allWordpressWpPerson(filter: { acf: { town: { eq: "Stockholm" } } }) {
       edges {
@@ -55,6 +57,35 @@ export const personQuery = graphql`
                   fluid(maxWidth: 1024) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    allWordpressPost(
+      filter: { categories: { elemMatch: { name: { eq: "Stockholm" } } } }
+    ) {
+      edges {
+        node {
+          id
+          slug
+          status
+          template
+          format
+          title
+          categories {
+            name
+            slug
+          }
+          content
+          date
+          featured_media {
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 1024) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

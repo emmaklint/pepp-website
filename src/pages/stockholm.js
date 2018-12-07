@@ -1,15 +1,66 @@
-import React from "react";
+import React, { Component } from "react";
 
 import Page from "../components/Page";
 import PageHeader from "../components/Typography/PageHeader";
 import Text from "../components/Typography/Text";
+import Img from "gatsby-image";
 
-const Stockholm = () => (
-  <Page>
-    <Text>
-      <PageHeader>Stockholm</PageHeader>
-    </Text>
-  </Page>
-);
+class Stockholm extends Component {
+  render() {
+    const data = this.props.data;
+    const persons = data.allWordpressWpPerson.edges;
+
+    return (
+      <Page>
+        <Text>
+          <PageHeader>Stockholm</PageHeader>
+          {persons.map(person => (
+            <div key={person.node.acf.name}>
+              <Img
+                fluid={person.node.acf.image.localFile.childImageSharp.fluid}
+              />
+              <p>{person.node.acf.name}</p>
+              <p>{person.node.acf.role}</p>
+              <p>{person.node.acf.town}</p>
+              <p>{person.node.acf.program}</p>
+            </div>
+          ))}
+        </Text>
+      </Page>
+    );
+  }
+}
 
 export default Stockholm;
+
+export const personQuery = graphql`
+  query {
+    allWordpressWpPerson(filter: { acf: { town: { eq: "Stockholm" } } }) {
+      edges {
+        node {
+          id
+          slug
+          status
+          template
+          title
+          date
+          acf {
+            name
+            role
+            town
+            program
+            image {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 1024) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

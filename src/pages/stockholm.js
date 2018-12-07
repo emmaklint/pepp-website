@@ -10,7 +10,6 @@ class Stockholm extends Component {
     const data = this.props.data;
     const persons = data.allWordpressWpPerson.edges;
     const posts = data.allWordpressPost.edges;
-    console.log(posts);
 
     return (
       <Page>
@@ -25,6 +24,13 @@ class Stockholm extends Component {
               <p>{person.node.acf.role}</p>
               <p>{person.node.acf.town}</p>
               <p>{person.node.acf.program}</p>
+            </div>
+          ))}
+          {posts.map(post => (
+            <div key={post.node.title}>
+              <Img
+                fluid={post.node.featured_media.localFile.childImageSharp.fluid}
+              />
             </div>
           ))}
         </Text>

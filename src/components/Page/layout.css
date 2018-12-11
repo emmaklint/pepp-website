@@ -38,11 +38,13 @@ template {
   display: none;
 }
 a {
+  color: black;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 a:active,
 a:hover {
+  opacity: 0.6;
   outline-width: 0;
 }
 abbr[title] {

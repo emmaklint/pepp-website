@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import Link from "gatsby-link";
 import Page from "../components/Page";
-import Img from "gatsby-image";
-import P from "../components/Typography/P";
 import { Grid, GridItem } from "styled-grid-responsive";
 import styled from "styled-components";
+import Card from "../components/Blog/Card"
 
 const Tag = styled.button`
   font-family: "Raleway";
@@ -20,6 +18,7 @@ const SelectedTag = styled(Tag)`
   background: #fecc02;
   color: white;
 `;
+
 
 class Blog extends Component {
   constructor(props) {
@@ -51,33 +50,35 @@ class Blog extends Component {
 
   makeSelected(slug, i) {
     if (this.state.keyword === slug) {
-        this.setState(state => {
-            const keywords = state.keywords.map((item, j) => {
-                if (j === i) {
-                    return item.active = false;
-                } else
-                { return item}
-            })
-            return keywords
-        })
+      this.setState(state => {
+        const keywords = state.keywords.map((item, j) => {
+          if (j === i) {
+            return (item.active = false);
+          } else {
+            return item;
+          }
+        });
+        return keywords;
+      });
       // get list
       // make list
       // sätt till inaktiv
       this.setState({ keyword: "" });
     } else {
       //sätt till aktiv
-        this.setState(state => {
-            const keywords = state.keywords.map((item, j) => {
-                if (j === i) {
-                    return item.active = true;
-                } else
-                { return item}
-            })
-            return keywords
-        })
+      this.setState(state => {
+        const keywords = state.keywords.map((item, j) => {
+          if (j === i) {
+            return (item.active = true);
+          } else {
+            return item;
+          }
+        });
+        return keywords;
+      });
       this.setState({ keyword: slug });
     }
-}
+  }
 
   render() {
     return (
@@ -85,27 +86,18 @@ class Blog extends Component {
         {this.state.keywords.map((keyword, i) => {
           const NecessaryButton = keyword.active ? SelectedTag : Tag;
           return (
-            <NecessaryButton onClick={() => this.makeSelected(keyword.slug, i)} key={keyword.slug}>
+            <NecessaryButton
+              onClick={() => this.makeSelected(keyword.slug, i)}
+              key={keyword.slug}
+            >
               {keyword.name}
             </NecessaryButton>
           );
         })}
-        <Grid>
+        <Grid full>
           {this.getPosts().map(({ node }) => (
             <GridItem col={1 / 3} key={node.slug}>
-              <div className={"post"} style={{ margin: 20 }}>
-                <Link to={"blogg/" + node.slug}>
-                  <Img
-                    fluid={node.featured_media.localFile.childImageSharp.fluid}
-                    style={{ height: "160px" }}
-                  />
-                  <P>{node.title}</P>
-                  <div
-                    className={"post-content"}
-                    dangerouslySetInnerHTML={{ __html: node.excerpt }}
-                  />
-                </Link>
-              </div>
+             <Card post={node}/>
             </GridItem>
           ))}
         </Grid>
@@ -135,7 +127,7 @@ export const pageQuery = graphql`
           featured_media {
             localFile {
               childImageSharp {
-                fluid(maxWidth: 1024) {
+                fluid(maxWidth: 1024, maxHeight: 1024) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

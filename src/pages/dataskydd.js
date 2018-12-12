@@ -1,15 +1,13 @@
 import React from "react";
 
 import Page from "../components/Page";
-import PageHeader from "../components/Typography/PageHeader";
-
 import Text from "../components/Typography/Text";
-import P from "../components/Typography/P";
+import { P, H1 } from "../components/Typography";
 
 const Security = () => (
   <Page>
     <Text>
-      <PageHeader>Dataskyddspolicy</PageHeader>
+      <H1>Dataskyddspolicy</H1>
       <P>
         Vi på Pepp lägger stor vikt vid att värna om våra medlemmars integritet
         och är därför noggranna med att skydda dina personuppgifter. För oss är

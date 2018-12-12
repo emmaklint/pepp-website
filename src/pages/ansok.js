@@ -1,11 +1,11 @@
 import React from "react";
 
 import Page from "../components/Page";
-import PageHeader from "../components/Typography/PageHeader";
+import {H1} from "../components/Typography";
 
 const Apply = () => (
   <Page>
-    <PageHeader>Ansök</PageHeader>
+    <H1>Ansök</H1>
   </Page>
 );
 

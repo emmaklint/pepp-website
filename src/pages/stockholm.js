@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import Page from "../components/Page";
-import PageHeader from "../components/Typography/PageHeader";
 import Text from "../components/Typography/Text";
 import Img from "gatsby-image";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import { Grid, GridItem } from "styled-grid-responsive";
-import Card from "../components/Blog/Card"
-
+import Card from "../components/Blog/Card";
+import {P, H1, H2} from '../components/Typography'
 
 const Person = styled.div`
   margin-bottom: 1rem;
@@ -56,8 +55,8 @@ class Stockholm extends Component {
     return (
       <Page>
         <Text>
-          <PageHeader>Stockholm</PageHeader>
-          <p>
+          <H1>Stockholm</H1>
+          <P>
             Pepp har funnits i Stockholm sedan starten 2013 och drivs av
             projektgruppen med studenter från KTH. 2018 års mentorskapsprogram
             utgörs av 54 mentorspar med adepter från gymnasier runt om Stockholm
@@ -66,16 +65,31 @@ class Stockholm extends Component {
             och innovation. Genom att samla gymnasietjejer*, studenter och
             näringsliv vill Pepp skapa sammanhang där tankar och erfarenheter
             utbyts, samtidigt som mångfalden ökar.
-          </p>
-          <h2>Senaste nytt</h2>
+          </P>
+          <H2>Senaste nytt</H2>
           <Grid full>
-            {posts.map(({node}) => (
+            {posts.map(({ node }) => (
               <GridItem col={1 / 3} key={node.slug}>
                 <Card post={node} />
               </GridItem>
             ))}
           </Grid>
-          <h2>Kontakta oss</h2>
+          <H2>Samarbete</H2>
+
+          <P>
+            Som partnerföretag till Pepp erbjuder vi er att vara med och påverka
+            framtiden genom att se till att unga människors framtidsval inte
+            begränsas av fördomar, familjebakgrund eller brist på förebilder och
+            på så sätt bidrar ni till att förse arbetsmarknaden med ﬂer
+            kvinnliga ingenjörer.
+          </P>
+          <P>
+            Vår ambition är att Pepp tillsammans med sina partnerföretag kan
+            visa gymnasiestuderande bredden av ingenjörsyrket. Om ert företag är
+            målmedvetna och vill se en mer jämställd ingenjörsbransch är ni
+            varmt välkomna att kontakta oss på stockholm@blipepp.nu
+          </P>
+          <H2>Kontakta oss</H2>
           <p>
             Stockholms projektgrupp består av studenter från KTH med varierande
             bakgrunder, studieinriktningar och intressen. Projektgruppen driver

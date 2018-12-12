@@ -1,13 +1,13 @@
 import React from "react";
 
 import Page from "../components/Page";
-import PageHeader from "../components/Typography/PageHeader";
+import {H1} from "../components/Typography";
 import Text from "../components/Typography/Text";
 
 const Contact = () => (
   <Page>
     <Text>
-      <PageHeader>Kontakt</PageHeader>
+      <H1>Kontakt</H1>
     </Text>
   </Page>
 );

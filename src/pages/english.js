@@ -1,14 +1,13 @@
 import React from "react";
 import Page from "../components/Page";
 
-import P from "../components/Typography/P";
-import PageHeader from "../components/Typography/PageHeader";
+import {P, H1} from "../components/Typography";
 import Text from "../components/Typography/Text";
 
 const English = () => (
   <Page>
     <Text>
-      <PageHeader>What's Pepp?</PageHeader>
+      <H1>What's Pepp?</H1>
       <P>
         Pepp is a mentoring program that intends to inspire more girls and young
         women to immerse themselves in technical studies. Pepp strives to

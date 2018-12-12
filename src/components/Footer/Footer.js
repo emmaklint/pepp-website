@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Grid, GridItem } from "styled-grid-responsive";
 import * as feather from "styled-icons/feather";
 import { Link } from "gatsby";
-import Meta from "../Typography/Meta";
+import {Meta} from "../Typography";
 
 const Container = styled.div`
   background-color: #fecc02;

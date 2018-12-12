@@ -3,7 +3,7 @@ import React from "react";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
 import styled from "styled-components";
-import P from "../Typography/P"
+import {P} from "../Typography"
 
 const BlogPost = styled.div`
   width: 100%;

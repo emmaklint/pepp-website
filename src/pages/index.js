@@ -1,11 +1,11 @@
 import React from "react";
 
 import Page from "../components/Page";
-import P from "../components/Typography/P";
+import {H1, P} from "../components/Typography";
 
 const IndexPage = () => (
   <Page>
-    <h1>Hej, vi är Pepp!</h1>
+    <H1>Hej, vi är Pepp!</H1>
     <P>
       Pepp är ett mentorsskapsprogram där du som tjej* får en mentor från
       universitetet som hjälper dig upptäcka de oändliga möjligheterna

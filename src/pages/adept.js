@@ -1,9 +1,7 @@
 import React from "react";
-
 import Page from "../components/Page";
-import PageHeader from "../components/Typography/PageHeader";
 import Text from "../components/Typography/Text";
-import P from "../components/Typography/P";
+import { P, H1 } from "../components/Typography";
 import Link from "gatsby-link";
 import styled from "styled-components";
 
@@ -29,7 +27,7 @@ cursor: pointer;
 const Adept = () => (
   <Page>
     <Text>
-      <PageHeader>Adept</PageHeader>
+      <H1>Adept</H1>
       <P>
         “Vad gör en ingenjör?” är du troligtvis inte ensam om att ha funderat
         över. Att svaret inte går att förklara i en mening beror på att en

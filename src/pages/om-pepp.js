@@ -1,16 +1,14 @@
 import React from "react";
 
 import Page from "../components/Page";
-import P from "../components/Typography/P";
-import PageHeader from "../components/Typography/PageHeader";
-import Meta from "../components/Typography/Meta";
+import { H1, H2, P, Meta } from "../components/Typography";
 import BigQuote from "../components/Typography/BigQuote";
 import Text from "../components/Typography/Text";
 
 const About = () => (
   <Page>
     <Text>
-      <PageHeader>Bakgrund</PageHeader>
+      <H1>Bakgrund</H1>
       <P>
         Pepp grundades i Stockholm i 2013 av Edit Wallin som då studerade
         industriell ekonomi på KTH. Edits väg in till KTH var aldrig självklar
@@ -40,7 +38,7 @@ const About = () => (
       <BigQuote>
         ”Pepp skapar nya förebilder och breddar synen på teknik.”
       </BigQuote>
-      <PageHeader>Vision</PageHeader>
+      <H2>Vision</H2>
       <P>
         Pepp vill ge utrymme åt kvinnliga förebilder inom teknik- och
         ingenjörsvärlden för att väcka intresse, utmana fördomar och visa de

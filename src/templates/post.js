@@ -5,22 +5,21 @@ import Page from "../components/Page";
 
 import Img from "gatsby-image";
 import Text from "../components/Typography/Text";
-import P from "../components/Typography/P";
+import { H1, P } from "../components/Typography";
 import styled from "styled-components";
 
 const Summary = styled.p`
-font-family: Raleway;
-font-weight: 500;
-font-size: 1.2rem;
-line-height: 1.6rem;
-margin: 1em 0;
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  margin: 1em 0;
 `;
 
 const BlogImage = styled(Img)`
-border-radius: 2px;
-margin: 1em 0;
+  border-radius: 2px;
+  margin: 1em 0;
 `;
-
 
 class PostTemplate extends Component {
   render() {
@@ -33,7 +32,7 @@ class PostTemplate extends Component {
     return (
       <Page>
         <Text>
-          <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+          <H1 dangerouslySetInnerHTML={{ __html: post.title }} />
           {summary && <Summary dangerouslySetInnerHTML={{ __html: summary }} />}
           {img && <BlogImage src={img.src} fluid={img} />}
           <P dangerouslySetInnerHTML={{ __html: post.content }} />
